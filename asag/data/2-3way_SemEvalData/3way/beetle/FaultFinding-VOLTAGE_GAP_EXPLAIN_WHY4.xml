@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="VOLTAGE_GAP_EXPLAIN_WHY4" module="FaultFinding" stype="EVALUATE">
+  <questionText>Explain why you got a voltage reading of 0 for terminal 4 and the positive terminal.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer166" fileID="VOLTAGE_GAP_EXPLAIN_WHY4_ANS1">Terminal 4 and the positive terminal are connected</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer167" fileID="VOLTAGE_GAP_EXPLAIN_WHY4_ANS2">Terminal 4 and the positive terminal are not separated by the gap</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer168" fileID="VOLTAGE_GAP_EXPLAIN_WHY4_ANS2A">There is no gap between terminal 4 and the positive terminal</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer169" fileID="VOLTAGE_GAP_EXPLAIN_WHY4_ANS3">terminal 4 is not connected to the negative battery terminal</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer170" fileID="VOLTAGE_GAP_EXPLAIN_WHY4_ANS4">terminal 4 is separated by a gap from the negative battery terminal</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="2" answerMatch="answer167" id="FaultFinding.VOLTAGE_GAP_EXPLAIN_WHY4.sbj10-l1.qa181" accuracy="correct">the positive battery terminal is not seperated by a gap from terminal 4</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer167" id="FaultFinding.VOLTAGE_GAP_EXPLAIN_WHY4.sbj11-l1.qa188" accuracy="correct">the positive battery terminal is not separated from terminal 4.</studentAnswer>
+    <studentAnswer count="2" answerMatch="answer166" id="FaultFinding.VOLTAGE_GAP_EXPLAIN_WHY4.sbj11-l1.qa189" accuracy="correct">terminal 4 is connected to the positive battery terminal</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer170" id="FaultFinding.VOLTAGE_GAP_EXPLAIN_WHY4.sbjb2-l1.qa149" accuracy="incorrect">There was a gap.</studentAnswer>
+  </studentAnswers>
+</question>

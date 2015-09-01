@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_GENERIC" id="BURNED_BULB_LOCATE_EXPLAIN_Q" module="FaultFinding" stype="QUESTION">
+  <questionText>Why does measuring voltage help you locate a burned out bulb? Try to answer in terms of electrical states, connections and/ or a gap.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer248" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS1">Measuring voltage indicates the place where the electrical state changes due to a damaged bulb.</referenceAnswer>
+    <referenceAnswer category="BEST" id="answer249" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS1B">Measuring voltage indicates the place where the electrical state changes due to a gap.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer250" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS3">Measuring voltage indicates whether two terminals are connected to each other.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer251" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS3B">Measuring voltage indicates whether two terminals are separated by a gap.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer252" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS6">A zero voltage means that the terminals are connected.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer253" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS6B">A non-zero voltage means that the terminals are not connected.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer254" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS6C">A zero voltage means that the terminals are not separated by a gap.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer255" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS6D">A non-zero voltage means that the terminals are separated by a gap.</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer256" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS8">A non-zero voltage means that there is a damaged bulb.</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer257" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS8B">A non-zero voltage means that there is a gap</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer258" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS9">A zero voltage means that there is no damaged bulb.</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer259" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS9B">A zero voltage means that there is no gap</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer260" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS10">A non-zero voltage means that the terminals have different electrical states.</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer261" fileID="BURNED_BULB_LOCATE_EXPLAIN_Q_ANS10B">A zero voltage means that the terminals have the same electrical state.</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer249" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbj10-l1.qa249" accuracy="contradictory">it allows you to measure electrical states between terminals</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer250" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbj11-l1.qa236" accuracy="correct">because the voltage measures the difference in electrical states of two terminals, so it can determine where there is a gap, or wehre there is a connection.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer250" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbj11-l1.qa237" accuracy="correct">voltage is the difference in electrical states between two terminals, so a gap or a connection in a circuit can be determined by the voltage.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer250" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbj11-l1.qa238" accuracy="contradictory">the electrical state between two terminals is the voltage. a gap shows voltage, while a connection results in no voltage.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer256" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbj11-l1.qa239" accuracy="correct">a bulb connects the terminals, so there will be a difference in electrical state if there is a fault.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer248" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbjb1-l1.qa187" accuracy="contradictory">The electrical states of two terminals when connected will determine the gaps and help to locate a burned out bulb.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer251" id="FaultFinding.BURNED_BULB_LOCATE_EXPLAIN_Q.sbjb2-l1.qa191" accuracy="incorrect">It will help find where the gap in the circuit is.</studentAnswer>
+  </studentAnswers>
+</question>

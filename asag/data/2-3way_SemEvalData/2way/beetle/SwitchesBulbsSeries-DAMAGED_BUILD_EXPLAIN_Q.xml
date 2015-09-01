@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="DAMAGED_BUILD_EXPLAIN_Q" module="SwitchesBulbsSeries" stype="PREDICT">
+  <questionText>Explain your reasoning.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer55" fileID="DAMAGED_BUILD_EXPLAIN_Q_ANS1">bulb B creates a gap</referenceAnswer>
+    <referenceAnswer category="KEYWORD" id="answer56" fileID="DAMAGED_BUILD_EXPLAIN_Q_ANS2">a gap</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer57" fileID="DAMAGED_BUILD_EXPLAIN_Q_ANS3">there is a gap in a circuit</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer58" fileID="DAMAGED_BUILD_EXPLAIN_Q_ANS4">there is an open path</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer59" fileID="DAMAGED_BUILD_EXPLAIN_Q_ANS5">there is an incomplete circuit</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer60" fileID="DAMAGED_BUILD_EXPLAIN_Q_ANS6">there is no closed path</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer57" id="SwitchesBulbsSeries.DAMAGED_BUILD_EXPLAIN_Q.sbj10-l1.qa104" accuracy="correct">there is a gap in the connection</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer55" id="SwitchesBulbsSeries.DAMAGED_BUILD_EXPLAIN_Q.sbj11-l1.qa108" accuracy="correct">the damaged bulb creates a gap in the circuit.</studentAnswer>
+    <studentAnswer count="1" id="SwitchesBulbsSeries.DAMAGED_BUILD_EXPLAIN_Q.sbjb1-l1.qa71" accuracy="incorrect">It still has a connect path between bulb a and c and the battery.</studentAnswer>
+  </studentAnswers>
+</question>

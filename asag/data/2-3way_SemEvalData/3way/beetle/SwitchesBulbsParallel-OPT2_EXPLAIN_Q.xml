@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="OPT2_EXPLAIN_Q" module="SwitchesBulbsParallel" stype="EVALUATE">
+  <questionText>Describe the paths in this diagram and explain how those paths account for the results.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer412" fileID="OPT2_EXPLAIN_ANS1">Bulb A is in a path which does not contain B and C, so bulbs B and C don't affect it. Bulbs B and C are in the same path. They affect each other, but Bulb A doesn't affect them.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer413" fileID="OPT2_EXPLAIN_ANS2">Bulb A is in a path which does not contain B and C and isn't affected by B or C. B and C are in the same path and affect each other.</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer414" fileID="OPT2_EXPLAIN_ANS3">there is a path containing A and a different path containing B and C</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers><studentAnswer count="1" answerMatch="answer413" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbj10-l2.qa130" accuracy="incorrect">bulb a is on a closed path with the battery. if bulb b or c is damaged, it creates and open path for bulbs b and c</studentAnswer><studentAnswer count="1" answerMatch="answer414" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbj10-l2.qa131" accuracy="incorrect">bulb a is on a closed path with the battery</studentAnswer><studentAnswer count="1" answerMatch="answer412" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbj11-l2.qa127" accuracy="correct">bulb a is in a path that is not affected by the other two bulbs. bulbs b and c are in a path that is affected if either of the bulbs burns out. bulbs b and c are not affected by bulb a.</studentAnswer><studentAnswer count="1" answerMatch="answer413" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbj11-l2.qa128" accuracy="incorrect">bulb a does not affect bulb b and bulb c. bulbs b and c, do not affect bulb a. bulb b affects bulb c, and bulb c affects bulb b.</studentAnswer><studentAnswer count="1" answerMatch="answer414" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbj11-l2.qa129" accuracy="correct">bulb a is contained in a path with the battery and bulbs b and c are contained in a separate path with the battery.</studentAnswer><studentAnswer count="1" answerMatch="answer414" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbjb1-l2.qa113" accuracy="incorrect">Bulb A is on a separate path than Bulbs B and C. Bulb B and C share the same path to the battery.</studentAnswer><studentAnswer count="1" answerMatch="answer412" id="SwitchesBulbsParallel.OPT2_EXPLAIN_Q.sbjb2-l2.qa115" accuracy="incorrect">When one bulb is out the others can still work because of the additional connections in the circuit path.</studentAnswer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </studentAnswers>
+</question>

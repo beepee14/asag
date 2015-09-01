@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_GENERIC" id="HYBRID_BURNED_OUT_WHY_Q3" module="SwitchesBulbsParallel" stype="EVALUATE">
+  <questionText>Under what circumstances will a damaged/ burned out bulb affect another bulb?</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer402" fileID="HYBRID_BURNED_OUT_WHY_Q3_ANS1">If they are in the same path the burned out bulb affects the other bulb.</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer404" fileID="HYBRID_BURNED_OUT_WHY_Q3_ANS2">It depends on whether or not they are in the same path</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer405" fileID="HYBRID_BURNED_OUT_WHY_Q3_ANS3">The damaged bulb and the other bulb must be contained in the same path</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer405" id="SwitchesBulbsParallel.HYBRID_BURNED_OUT_WHY_Q3.sbj10-l2.qa119" accuracy="correct">if the damaged bulb is on the same closed path as the other bulb</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer405" id="SwitchesBulbsParallel.HYBRID_BURNED_OUT_WHY_Q3.sbj10-l2.qa120" accuracy="incorrect">if the damaged bulb is on the same closed path with the battery</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer405" id="SwitchesBulbsParallel.HYBRID_BURNED_OUT_WHY_Q3.sbj11-l2.qa118" accuracy="correct">if the damaged bulb is in the same closed path with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer404" id="SwitchesBulbsParallel.HYBRID_BURNED_OUT_WHY_Q3.sbjb1-l2.qa104" accuracy="correct">When it is on the same closed path with the battery.</studentAnswer>
+  </studentAnswers>
+</question>

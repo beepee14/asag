@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_GENERIC" id="PARALLEL_SWITCH_EXPLAIN_Q3" module="SwitchesBulbsParallel" stype="EVALUATE">
+  <questionText>What role does the path play in determining whether or not a switch affects a bulb?</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer310" fileID="PARALLEL_SWITCH_EXPLAIN_Q3_ANS1A">If a bulb and a switch are in the same path the switch affects the bulb</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer312" fileID="PARALLEL_SWITCH_EXPLAIN_Q3_ANS3">The switch and the bulb have to be in the same path</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer312" id="SwitchesBulbsParallel.PARALLEL_SWITCH_EXPLAIN_Q3.sbj10-l2.qa49" accuracy="incorrect">the path must be closed with the battery and the bulb</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer312" id="SwitchesBulbsParallel.PARALLEL_SWITCH_EXPLAIN_Q3.sbj10-l2.qa50" accuracy="incorrect">the path must contain a battery</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer312" id="SwitchesBulbsParallel.PARALLEL_SWITCH_EXPLAIN_Q3.sbj10-l2.qa51" accuracy="incorrect">a bulb must be contained in a closed path with the battery</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer312" id="SwitchesBulbsParallel.PARALLEL_SWITCH_EXPLAIN_Q3.sbj11-l2.qa48" accuracy="incorrect">the bulb has to be conatined in a closed path with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer312" id="SwitchesBulbsParallel.PARALLEL_SWITCH_EXPLAIN_Q3.sbjb1-l2.qa44" accuracy="correct">The bulb has to be in the same closed path as the battery which is connected to the switch.</studentAnswer>
+    <studentAnswer count="1" id="SwitchesBulbsParallel.PARALLEL_SWITCH_EXPLAIN_Q3.sbjb2-l2.qa45" accuracy="incorrect">It determines whether or not the light bulbs will turn on.</studentAnswer>
+  </studentAnswers>
+</question>

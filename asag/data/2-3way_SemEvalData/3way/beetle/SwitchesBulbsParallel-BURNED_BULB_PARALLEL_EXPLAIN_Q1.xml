@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="BURNED_BULB_PARALLEL_EXPLAIN_Q1" module="SwitchesBulbsParallel" stype="PREDICT">
+  <questionText>Explain your reasoning.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer348" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q1_ANS1">bulbs B and C are still in closed paths with the battery</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer349" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q1_ANS1_OLD">If bulb A burns out, bulbs B and C are still in a closed path</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer351" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q1_ANS2">each bulb is in its own path</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer348" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q1.sbj10-l2.qa90" accuracy="correct">bulbs b and c are on a closed path with the battery</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer348" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q1.sbj11-l2.qa85" accuracy="correct">bulb b and bulb b are still in a closed path with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer351" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q1.sbjb1-l2.qa77" accuracy="correct">All the bulbs are on different closed paths connected to the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer348" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q1.sbjb2-l2.qa78" accuracy="correct">They are still in path with the battery.</studentAnswer>
+  </studentAnswers>
+</question>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="BULB_ONLY_EXPLAIN_WHY4" module="FaultFinding" stype="EVALUATE">
+  <questionText>Explain why you got a voltage reading of 0 for terminal 1 and terminal 4.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer235" fileID="BULB_ONLY_EXPLAIN_WHY4_ANS1">Terminals 1 and 4 are connected</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer236" fileID="BULB_ONLY_EXPLAIN_WHY4_ANS2">Terminals 1 and 4 are not separated by the gap</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer235" id="FaultFinding.BULB_ONLY_EXPLAIN_WHY4.sbj10-l1.qa233" accuracy="correct">terminal one is connected to terminal four</studentAnswer>
+    <studentAnswer count="1" id="FaultFinding.BULB_ONLY_EXPLAIN_WHY4.sbjb2-l1.qa185" accuracy="incorrect">1 is connected to terminal 2.</studentAnswer>
+  </studentAnswers>
+</question>

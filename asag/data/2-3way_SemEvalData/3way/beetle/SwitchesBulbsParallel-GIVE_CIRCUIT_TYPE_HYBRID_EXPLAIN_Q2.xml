@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2" module="SwitchesBulbsParallel" stype="QUESTION">
+  <questionText>Explain your reasoning.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer423" fileID="GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2_ANS1">A and C are in different paths with the battery</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer424" fileID="GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2_ANS2">A and C are not in the same path with the battery</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer425" fileID="GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2_ANS3">A and C are in different paths</referenceAnswer>
+    <referenceAnswer category="MINIMAL" id="answer426" fileID="GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2_ANS4">A and C are not in the same path</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="3" answerMatch="answer423" id="SwitchesBulbsParallel.GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2.sbj10-l2.qa145" accuracy="correct">bulbs a and c are contained in different paths with the battery</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer423" id="SwitchesBulbsParallel.GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2.sbj11-l2.qa143" accuracy="correct">bulbs a and c are containe din diffrent paths with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer423" id="SwitchesBulbsParallel.GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2.sbj11-l2.qa144" accuracy="correct">bulb a and bulb b are containe4d in different paths with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer423" id="SwitchesBulbsParallel.GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2.sbj11-l2.qa145" accuracy="correct">bulb a and bulb c are contained in different paths with the bttery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer423" id="SwitchesBulbsParallel.GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2.sbjb1-l2.qa123" accuracy="correct">Bulb A and C are contained in different paths with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer424" id="SwitchesBulbsParallel.GIVE_CIRCUIT_TYPE_HYBRID_EXPLAIN_Q2.sbjb2-l2.qa125" accuracy="contradictory">They are on different paths than the battery</studentAnswer>
+  </studentAnswers>
+</question>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="BURNED_BULB_PARALLEL_EXPLAIN_Q2" module="SwitchesBulbsParallel" stype="PREDICT">
+  <questionText>Explain your reasoning.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer353" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q2_ANS1">Bulbs A and C are still in closed paths with the battery</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer354" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q2_ANS1_OLD">Bulbs A and C are in a closed path</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer355" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q2_ANS2">each bulb is in its own path</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer356" fileID="BURNED_BULB_PARALLEL_EXPLAIN_Q2_ANS3">Bulb B is in a separate path</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer353" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q2.sbj10-l2.qa92" accuracy="correct">bulbs a and c are on a closed path with the battery</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer353" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q2.sbj11-l2.qa87" accuracy="correct">bulb a and bulb c are still in a closed [ath with the battery.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer355" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q2.sbjb1-l2.qa79" accuracy="correct">They are all on different closed paths and there will be no gap in between them</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer353" id="SwitchesBulbsParallel.BURNED_BULB_PARALLEL_EXPLAIN_Q2.sbjb2-l2.qa80" accuracy="correct">They are still in path with battery</studentAnswer>
+  </studentAnswers>
+</question>

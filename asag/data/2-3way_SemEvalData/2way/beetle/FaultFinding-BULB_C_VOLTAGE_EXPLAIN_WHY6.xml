@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<question qtype="Q_EXPLAIN_SPECIFIC" id="BULB_C_VOLTAGE_EXPLAIN_WHY6" module="FaultFinding" stype="EVALUATE">
+  <questionText>Explain why you got a voltage reading of 0 for terminal 6 and the positive terminal.</questionText>
+  <referenceAnswers>
+    <referenceAnswer category="BEST" id="answer216" fileID="BULB_C_VOLTAGE_EXPLAIN_WHY6_ANS1">Terminal 6 and the positive terminal are connected</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer217" fileID="BULB_C_VOLTAGE_EXPLAIN_WHY6_ANS2">Terminal 6 and the positive terminal are not separated by the gap</referenceAnswer>
+    <referenceAnswer category="GOOD" id="answer218" fileID="BULB_C_VOLTAGE_EXPLAIN_WHY6_ANS2">Terminal 6 and the positive terminal are not separated by the gap</referenceAnswer>
+  </referenceAnswers>
+  <studentAnswers>
+    <studentAnswer count="1" answerMatch="answer216" id="FaultFinding.BULB_C_VOLTAGE_EXPLAIN_WHY6.sbj11-l1.qa216" accuracy="correct">termonal 6 is connected to the positive battery terminal.</studentAnswer>
+    <studentAnswer count="1" id="FaultFinding.BULB_C_VOLTAGE_EXPLAIN_WHY6.sbjb1-l1.qa169" accuracy="incorrect">The battery is damaged.</studentAnswer>
+    <studentAnswer count="1" answerMatch="answer216" id="FaultFinding.BULB_C_VOLTAGE_EXPLAIN_WHY6.sbjb2-l1.qa173" accuracy="correct">It was connected.</studentAnswer>
+  </studentAnswers>
+</question>

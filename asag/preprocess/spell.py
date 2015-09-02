@@ -12,7 +12,7 @@ def train(features):
   return model
 
 def compute_nwords(all_words):
-  word_corpus = all_words + words(file('big.txt').read())
+  word_corpus = all_words + words(file('../preprocess/big.txt').read())
   return train(word_corpus)
 
 def edits1(word):

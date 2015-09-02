@@ -1,6 +1,12 @@
 from os import listdir
 from os.path import isfile, join
 import xml.etree.cElementTree as ET
+import re,string
+
+def remove_punctuation(_text):
+	regex = re.compile('[%s]' % re.escape(string.punctuation))
+	text = regex.sub('', _text)
+	return text.lower()
 
 def get_file_names(dir_path):
 	return [ f for f in listdir(dir_path) if isfile(join(dir_path,f)) ]
@@ -8,13 +14,13 @@ def get_file_names(dir_path):
 def parse_file(file_path):
 	tree = ET.ElementTree(file=file_path)
 	root = tree.getroot()
-	question = root[0].text
+	question = remove_punctuation(root[0].text)
 	reference_answers = []
 	for child in root[1]:
-		reference_answers.append((child.text,child.attrib["category"]))
+		reference_answers.append((remove_punctuation(child.text),child.attrib["category"]))
 	student_answers = []
 	for child in root[2]:
-		student_answers.append((child.text,child.attrib["accuracy"]))
+		student_answers.append((remove_punctuation(child.text),child.attrib["accuracy"]))
 	return [question,reference_answers,student_answers]
 
 def get_data(dir_path):

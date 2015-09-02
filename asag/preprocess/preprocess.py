@@ -1,21 +1,15 @@
 # Preprocess the student answers
 import parser
 import spell
-import re,string
-
-def remove_punctuation(_text):
-	regex = re.compile('[%s]' % re.escape(string.punctuation))
-	text = regex.sub('', _text)
-	return text.lower()
 
 def get_all_words(data):
 	all_words = set()
 	for data_point in data:
-		question = remove_punctuation(data_point[0])
+		question = data_point[0]
 		for word in question.split():
 			all_words.add(word)
 		for reference_answer in  data_point[1]:
-			answer = remove_punctuation(reference_answer[0])
+			answer = reference_answer[0]
 			for word in answer.split():
 				all_words.add(word)
 	return list(all_words)

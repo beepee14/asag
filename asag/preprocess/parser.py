@@ -26,8 +26,8 @@ def get_data(dir_path):
 	return data
 
 def main():
-	dir_path = "../data/2-3way_SemEvalData/2way/beetle"
-	get_data(dir_path)
-	
+	dir_path = "../data/semeval2013-Task7-2and3way/training/2way/beetle"
+	data = get_data(dir_path)
+
 if __name__ == '__main__':
 	main()

@@ -40,9 +40,9 @@ def correct_student_answers(data):
 									data_point[1],
 									spell_corrected_answers])
 	return spell_corrected_data
-	
+
 def main():
-	dir_path = "../data/2-3way_SemEvalData/2way/beetle"
+	dir_path = "../data/semeval2013-Task7-2and3way/training/2way/beetle"
 	data = parser.get_data(dir_path)
 	data = correct_student_answers(data)
 

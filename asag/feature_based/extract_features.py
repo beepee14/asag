@@ -8,8 +8,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import nltk
 from nltk.corpus import wordnet as wn
+from nltk.corpus import wordnet_ic
 
 EN_STOPWORDS = stopwords.words('english')
+brown_ic = wordnet_ic.ic('ic-brown.dat')
 
 def get_wordnet_pos(treebank_tag):
 	if treebank_tag.startswith('J'):
@@ -33,10 +35,19 @@ def get_word_similarity(word,other_word,metric):
 	maxi = 0
 	for syn in word_synsets:
 		for other_syn in other_word_synsets:
-			if metric == "wup":
-				maxi = max(maxi, syn.wup_similarity(other_syn))
+			if other_syn.pos == syn.pos:
+				try:
+					if metric == "wup":
+						maxi = max(maxi, min(10, syn.wup_similarity(other_syn)))
+					if metric == "lch":
+						maxi = max(maxi, min(10, syn.lch_similarity(other_syn)))
+					if metric == "res":
+						maxi = max(maxi, min(10, syn.res_similarity(other_syn, brown_ic)))
+					if metric == "lin":
+						maxi = max(maxi, min(10, syn.lin_similarity(other_syn, brown_ic)))
+				except :
+					maxi = maxi
 	return maxi
-			# if metric == ""
 
 def max_sim(word, sentence, metric):
 	if len(sentence) == 0:
@@ -46,22 +57,18 @@ def max_sim(word, sentence, metric):
 		max_sim = max(max_sim, get_word_similarity(word,sentence[i],metric))
 	return max_sim
 
-def get_text_similarity(string1, string2, metric):
-	string1_tokens = word_tokenize(string1)
-	string2_tokens = word_tokenize(string2)
-	string1_tokens = nltk.pos_tag(string1_tokens)
-	string2_tokens = nltk.pos_tag(string2_tokens)
-	string1_tokens = [x for x in string1_tokens if x[0] not in EN_STOPWORDS]
-	string2_tokens = [x for x in string2_tokens if x[0] not in EN_STOPWORDS]
+def get_text_similarity(string1_tokens, string2_tokens, metric):
 	sim_score = 0.0
 	sum_score = 0.0
-	for word in string1_tokens:
-		sum_score += max_sim(word,string2_tokens,metric)
-	sim_score += float(sum_score)/len(string1_tokens)
+	if len(string1_tokens) != 0:
+		for word in string1_tokens:
+			sum_score += max_sim(word,string2_tokens,metric)
+		sim_score += float(sum_score)/len(string1_tokens)
 	sum_score = 0.0
-	for word in string2_tokens:
-		sum_score += max_sim(word,string1_tokens,metric)
-	sim_score += float(sum_score)/len(string2_tokens)
+	if len(string2_tokens) != 0:
+		for word in string2_tokens:
+			sum_score += max_sim(word,string1_tokens,metric)
+		sim_score += float(sum_score)/len(string2_tokens)
 	sim_score = sim_score/2
 	return sim_score
 

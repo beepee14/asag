@@ -7,22 +7,60 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import tree
 
 import extract_features as ex
+from nltk.tokenize import word_tokenize
+import nltk
+from nltk.corpus import stopwords
+
+EN_STOPWORDS = stopwords.words('english')
 
 def get_all_features_question(question, student_answer):
 	cosine_sim = get_cosine_similarity(question,student_answer)
 	bleu_sim = ex.get_bleu_similarity([question], student_answer)
-	wup_sim = ex.get_text_similarity(question,student_answer,"wup")
-	return [cosine_sim, bleu_sim, wup_sim]
+	features = [cosine_sim, bleu_sim]
+
+	student_answer_tokens = word_tokenize(student_answer)
+	student_answer_tokens = nltk.pos_tag(student_answer_tokens)
+	student_answer_tokens = [x for x in student_answer_tokens if x[0] not in EN_STOPWORDS]
+	question_tokens = word_tokenize(question)
+	question_tokens = nltk.pos_tag(question_tokens)
+	question_tokens = [x for x in question_tokens if x[0] not in EN_STOPWORDS]
+	metrics = ["wup", "lin", "jcn", "res", "lch"]
+	for metric in metrics:
+		sim = ex.get_text_similarity(question_tokens,student_answer_tokens,metric)
+		features.append(sim)
+	return features
 
 def get_all_features_ref(reference_answers, student_answer):
+	
+	""" Bleu Similarity"""
+	bleu_sim = ex.get_bleu_similarity(reference_answers, student_answer)
+
+	""" Cosine distance """
 	max_cosine_sim = get_cosine_similarity(reference_answers[0],student_answer)
 	for i in range(1,len(reference_answers)):
 		cosine_sim = get_cosine_similarity(reference_answers[i],student_answer)
 		if cosine_sim > max_cosine_sim :
 			max_cosine_sim = cosine_sim
-	bleu_sim = ex.get_bleu_similarity(reference_answers, student_answer)
-	
-	return [max_cosine_sim, bleu_sim, wup_sim]
+	features = [max_cosine_sim, bleu_sim]
+	""" Wu Palmer and other similarity measures used for text Similarity """
+	student_answer_tokens = word_tokenize(student_answer)
+	student_answer_tokens = nltk.pos_tag(student_answer_tokens)
+	student_answer_tokens = [x for x in student_answer_tokens if x[0] not in EN_STOPWORDS]
+	reference_answers_tokens = []
+	for answer in reference_answers:
+		reference_answer_tokens = word_tokenize(answer)
+		reference_answer_tokens = nltk.pos_tag(reference_answer_tokens)
+		reference_answer_tokens = [x for x in reference_answer_tokens if x[0] not in EN_STOPWORDS]
+		reference_answers_tokens.append(reference_answer_tokens)
+	metrics = ["wup", "lin", "res", "lch"]
+	for metric in metrics:
+		max_sim = ex.get_text_similarity(reference_answers_tokens[0],student_answer_tokens, metric)
+		for i in range(1,len(reference_answers)):
+			sim = ex.get_text_similarity(reference_answers_tokens[i],student_answer_tokens, metric)
+			if sim > max_sim :
+				max_sim = sim
+		features.append(max_sim)
+	return features
 
 def get_single_data(data_point):
 	question = data_point[0]
@@ -33,6 +71,7 @@ def get_single_data(data_point):
 		feature_row = feature_row + get_all_features_ref(reference_answers, student_answer)
 		feature_row = feature_row + [1 if label=="correct" else 0]
 		feature_data.append(feature_row)
+		print "done"
 	return feature_data
 
 def compute_accuracy(pred_Y,test_Y):

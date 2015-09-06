@@ -29,6 +29,7 @@ def get_data(dir_path):
 	for file_name in file_names:
 		file_path = dir_path + "/" + file_name
 		data.append(parse_file(file_path))
+	print "Parsed all files from " + dir_path
 	return data
 
 def main():

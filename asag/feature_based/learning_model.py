@@ -1,15 +1,18 @@
-""" Baseline predictor """
+""" Feature Based Machine learning model predictor """
 
 from preprocess.parser import get_data
 from preprocess.preprocess import correct_student_answers
-from scipy import spatial
-from similarity_measures import get_cosine_similarity
-from sklearn import tree
+from baseline.similarity_measures import get_cosine_similarity
 from sklearn.ensemble import RandomForestClassifier
+from sklearn import tree
+
+import extract_features as ex
 
 def get_all_features_question(question, student_answer):
 	cosine_sim = get_cosine_similarity(question,student_answer)
-	return [cosine_sim]
+	bleu_sim = ex.get_bleu_similarity([question], student_answer)
+	wup_sim = ex.get_text_similarity(question,student_answer,"wup")
+	return [cosine_sim, bleu_sim, wup_sim]
 
 def get_all_features_ref(reference_answers, student_answer):
 	max_cosine_sim = get_cosine_similarity(reference_answers[0],student_answer)
@@ -17,7 +20,9 @@ def get_all_features_ref(reference_answers, student_answer):
 		cosine_sim = get_cosine_similarity(reference_answers[i],student_answer)
 		if cosine_sim > max_cosine_sim :
 			max_cosine_sim = cosine_sim
-	return [max_cosine_sim]
+	bleu_sim = ex.get_bleu_similarity(reference_answers, student_answer)
+	
+	return [max_cosine_sim, bleu_sim, wup_sim]
 
 def get_single_data(data_point):
 	question = data_point[0]
@@ -48,7 +53,7 @@ def split_labels(data):
 def fit_predict(data_train, data_test):
 	train_X, train_Y = split_labels(data_train)
 	test_X, test_Y = split_labels(data_test)
-	clf = RandomForestClassifier(n_estimators=10)
+	clf = tree.DecisionTreeClassifier()
 	clf = clf.fit(train_X, train_Y)
 	pred_Y = clf.predict(test_X)
 	accuracy = compute_accuracy(pred_Y, test_Y)
@@ -65,6 +70,7 @@ def get_feature_data(dir_path):
 def main():
 	dir_path = "../data/semeval2013-Task7-2and3way/training/2way/beetle"
 	data_train = get_feature_data(dir_path)
+	print data_train[:10]
 	dir_path = "../data/semeval2013-Task7-2and3way/test/2way/beetle/test-unseen-answers"
 	data_test = get_feature_data(dir_path)
 	fit_predict(data_train, data_test)

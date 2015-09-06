@@ -33,6 +33,7 @@ def correct_student_answers(data):
 		spell_corrected_data.append([data_point[0],
 									data_point[1],
 									spell_corrected_answers])
+	print "spell correction completed on all student answers"
 	return spell_corrected_data
 
 def main():

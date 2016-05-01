@@ -63,7 +63,7 @@ def get_all_features_question(question, student_answer, student_answer_tokens):
 	for metric in metrics:
 		sim = ex.get_text_similarity(question_tokens,student_answer_tokens,metric)
 		features.append(sim)
-	features.append(vec_similarity_question(question, student_answer))
+	features.append(vec_similarity_sentences(question, student_answer))
 	return features
 
 def get_all_features_ref(reference_answers, student_answer, student_answer_tokens):
@@ -169,26 +169,26 @@ def initialise_model(data):
 def get_feature_data(dir_path):
 	data = get_data(dir_path)
 	data = correct_student_answers(data)
-	initialise_model(data)
-	# feature_data = []
-	# counter = 0
-	# last = 0
-	# for i in range(len(data)):
-	# 	if (i*10)/len(data)>last:
-	# 		last = (i*10)/len(data)
-	# 		print str(last)+"0% completed"
-	# 	feature_data += get_single_data(data[i])
-	# print "feature extraction complete"
-	return ""
+	# initialise_model(data)
+	feature_data = []
+	counter = 0
+	last = 0
+	for i in range(len(data)):
+		if (i*10)/len(data)>last:
+			last = (i*10)/len(data)
+			print str(last)+"0% completed"
+		feature_data += get_single_data(data[i])
+	print "feature extraction complete"
+	return feature_data
 
 def main():
 	logging.basicConfig(format='%(asctime)s : %(threadName)s : %(levelname)s : %(message)s', level=logging.INFO)
 	logging.info("running %s" % " ".join(sys.argv))
 	dir_path = "../data/semeval2013-Task7-2and3way/training/2way/beetle"
 	data_train = get_feature_data(dir_path)
-	# dir_path = "../data/semeval2013-Task7-2and3way/test/2way/beetle/test-unseen-answers"
-	# data_test = get_feature_data(dir_path)
-	# fit_predict(data_train, data_test)
+	dir_path = "../data/semeval2013-Task7-2and3way/test/2way/beetle/test-unseen-answers"
+	data_test = get_feature_data(dir_path)
+	fit_predict(data_train, data_test)
 
 if __name__ == '__main__':
 	main()

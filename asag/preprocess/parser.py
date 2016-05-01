@@ -8,8 +8,9 @@ def remove_punctuation(_text):
 	text = regex.sub('', _text)
 	return text.lower()
 
+# returns a list containing the names of all the files in the directory
 def get_file_names(dir_path):
-	return [ f for f in listdir(dir_path) if isfile(join(dir_path,f)) ]
+	return [ f for f in listdir(dir_path) if isfile(join(dir_path,f)) and f != ".DS_Store" ]
 
 def parse_file(file_path):
 	tree = ET.ElementTree(file=file_path)
@@ -26,10 +27,12 @@ def parse_file(file_path):
 def get_data(dir_path):
 	file_names = get_file_names(dir_path)
 	data = []
-	for file_name in file_names:
-		file_path = dir_path + "/" + file_name
-		data.append(parse_file(file_path))
-	print "Parsed all files from " + dir_path
+	print "Parsing of xml files started"
+	for i in range(len(file_names)):
+		file_path = dir_path + "/" + file_names[i]
+		file_data = parse_file(file_path)
+		data.append(file_data)
+	print "Parsing completed of files from " + dir_path
 	return data
 
 def main():

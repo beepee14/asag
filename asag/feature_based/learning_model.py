@@ -4,6 +4,7 @@ from preprocess.parser import get_data
 from preprocess.preprocess import correct_student_answers
 from baseline.similarity_measures import get_cosine_similarity
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn import tree
 import pickle
 import extract_features as ex
@@ -16,12 +17,17 @@ import logging
 import sys
 import os
 from word2vec import Word2Vec, Sent2Vec, LineSentence
+from scipy import spatial
 from sklearn.metrics.pairwise import cosine_similarity
 
 EN_STOPWORDS = set(stopwords.words('english'))
 metrics = ["wup", "res", "lch", "lin"]
 
+import warnings
+
 def vec_similarity_sentences(sentence1, sentence2):
+	if len(sentence1) == 0 or len(sentence2)==0:
+		return 0
 	input_file = 'test.txt'
 	sent_file = 'sent.txt'
 	
@@ -39,10 +45,11 @@ def vec_similarity_sentences(sentence1, sentence2):
 	f.close()
 	model = Sent2Vec(LineSentence(sent_file), model_file=input_file + '.model')
 	model.save_sent2vec_format(sent_file + '.vec')
+	
 	lines = [line.rstrip('\n') for line in open(sent_file + '.vec')][1:]
 	lines = lines[0].split()[1:]
 	sentence2_rep = [float(i) for i in lines]
-	return cosine_similarity(sentence1_rep, sentence2_rep)
+	return 1 - spatial.distance.cosine(sentence1_rep, sentence2_rep)
 
 def vec_similarity_ref_answers(reference_answers, student_answer):
 	maxi = -1000000
@@ -130,11 +137,12 @@ def count_class(x):
 	zeroes = len(np.where(np.array(x) == 0)[0])
 	print zeroes, len(x) - zeroes
 
-
 def fit_predict(data_train, data_test):
+	print data_train[:5]
+	print data_test[:5]
 	train_X, train_Y = split_labels(data_train)
 	test_X, test_Y = split_labels(data_test)
-	clf = RandomForestClassifier()
+	clf = RandomForestClassifier(n_estimators =200)
 	clf = clf.fit(train_X, train_Y)
 	pred_Y = clf.predict(test_X)
 	count_class(test_Y)
@@ -182,19 +190,16 @@ def get_feature_data(dir_path):
 	return feature_data
 
 def main():
-	logging.basicConfig(format='%(asctime)s : %(threadName)s : %(levelname)s : %(message)s', level=logging.INFO)
+	logging.basicConfig(format='%(asctime)s : %(threadName)s : %(levelname)s : %(message)s', level=logging.ERROR)
 	logging.info("running %s" % " ".join(sys.argv))
 	dir_path = "../data/semeval2013-Task7-2and3way/training/2way/beetle"
 	data_train = get_feature_data(dir_path)
+	print data_train[1]
 	dir_path = "../data/semeval2013-Task7-2and3way/test/2way/beetle/test-unseen-answers"
 	data_test = get_feature_data(dir_path)
 	fit_predict(data_train, data_test)
 
 if __name__ == '__main__':
-	main()
-
-
-
-
-
-
+	with warnings.catch_warnings():
+		warnings.simplefilter("ignore")
+		main()

@@ -142,11 +142,23 @@ def fit_predict(data_train, data_test):
 	print data_test[:5]
 	train_X, train_Y = split_labels(data_train)
 	test_X, test_Y = split_labels(data_test)
-	clf = RandomForestClassifier(n_estimators =200)
-	clf = clf.fit(train_X, train_Y)
+	forest = ExtraTreesClassifier(n_estimators=250,
+                              random_state=0)
+	clf = forest.fit(train_X, train_Y)
+	importances = forest.feature_importances_
 	pred_Y = clf.predict(test_X)
+	std = np.std([tree.feature_importances_ for tree in forest.estimators_],axis=0)
+	indices = np.argsort(importances)[::-1]
+	plt.figure()
+	plt.title("Feature importances")
+	plt.bar(range(train_X.shape[1]), importances[indices],
+       color="r", yerr=std[indices], align="center")
+	plt.xticks(range(train_X.shape[1]), indices)
+	plt.xlim([-1, train_X.shape[1]])
+	plt.show()
 	count_class(test_Y)
 	count_class(pred_Y)
+
 	# accuracy = compute_accuracy(pred_Y, test_Y)
 	f1_sco = f1_score(test_Y, pred_Y, average='macro') 
 	print f1_sco
